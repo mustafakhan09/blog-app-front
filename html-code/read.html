@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="../src/output.css">
+    <!-- <link rel="stylesheet" href="read.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="image/Muatafa_Khan_Daily_Dose_of_Curiosity_make_a_logo_of_this_text_61c0f3dd-127b-425e-8dc3-dfaa4e28908b.png " type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+
+
+</head>
+<body class="bg-purple-500">
+     
+    <div class="md:my-container lg:w-[90vw] m-auto shadow-sm p-7  bg-white 2xs:w-full">
+      <div id="backgroundElement" class="md:cover w-full h-[500px] bg-cover bg-center 2xs:w-full h-[50vw] object-contain">
+        <!-- Background image will be set here -->
+      </div>
+      
+        <header class="blog-header flex justify-between border-b-2 p-2">
+            <h1 id="blog-title" class="text-3xl">Blog Title</h1> 
+             <a href="#comment" class=" 2xs:hidden md:block"><i class="fa-regular fa-comment text-purple-500 text-[100%] mt-2"></i></a>  
+        </header>
+
+        <section id="blog-content">
+            <p>
+                Loading blog content...
+            </p>
+        </section>
+
+        <footer class="flex justify-center mt-10">
+            <button onclick="goBack()" class="bg-purple-500 p-3 m-3 rounded text-white">Go Back</button>
+        </footer>
+
+
+        <div class="commets-sec 2xs:mt-6 md:mt-auto">  
+            <div class="comments " id="comment">
+                 <div class="comment-input"><textarea id="comment-input" class="md:input-field outline-none border-b-2 md:h-[3vw] 2xs:h-[10vw] " placeholder="What are your thoughts?"></textarea></div> 
+                  <div class="submit-btn ">
+                    <button id="submitBtn" class="bg-purple-500 p-3 mt-1 rounded text-white">Submit</button>
+                  </div>
+                
+            </div>   
+            <div class="temp-div mt-5 2xs:mt-[40px] ">  
+              <div class="comment-heading 2xs:m-[-24px] md:m-auto ">  
+                <h2 id="comment-headings" class="text-3xl "></h2>
+              <div id="comments-container">
+            
+              </div>
+            </div>
+            </div>
+        </div>
+          
+
+
+
+
+
+
+
+       
+    </div>
+    <script src="../js-code/read.js"></script>
+
+</body>
+</html>

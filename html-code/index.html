@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="image/Muatafa_Khan_Daily_Dose_of_Curiosity_make_a_logo_of_this_text_61c0f3dd-127b-425e-8dc3-dfaa4e28908b.png " type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="my-container lg:flex md:block 2xs:block">
+        <!-- Sidebar -->
+        <aside class="lg:sidebar bg-purple-500 text-white nav-width h-screen box-border shadow-lg transition-all md:h-auto p-0 px-1 pt-[1vw] 2xs:h-auto  px-1 pt-[1vw]">
+            <div class="lg:brand mt-0 flex lg:justify-center md:flex md:justify-between items-center 2xs:flex   justify-between">
+                <img src="../image/Muatafa_Khan_Daily_Dose_of_Curiosity_make_a_logo_of_this_text_16d7d6e7-e8af-44aa-8760-b984d215d548.png" class="lg:w-[15vw] md:w-[13vw] 2xs:w-[25%]">
+                <span class="lg:hidden md:text-[2vw] 2xs:text-[4vw]"><i class="fa-solid fa-bars bg-purple-500 cursor-pointer mr-1 pb-2 " id="sidebarBtn"></i></span>
+            </div>
+            <ul class=" lg:block nav-links list-none pt-4 space-y-2 md: hidden">
+                <li>
+                    <a href="index.html" class="nav-btn text-white  flex items-center space-x-3 px-10 py-3.5 rounded border-none cursor-pointer hover:bg-purple-400 whitespace-nowrap w-full md:justify-center" id="homeBtn">
+                        <i class="fa fa-home"></i>
+                        <span>Blog Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="post.html" class="nav-btn text-white flex items-center space-x-3 px-10 py-3.5 rounded border-none cursor-pointer hover:bg-purple-400 whitespace-nowrap w-full md:justify-center" id="post-blogs">
+                        <i class="fa fa-pencil-alt"></i>
+                        <span>My Blogs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-btn text-white flex items-center space-x-3 px-10 py-3.5 rounded border-none cursor-pointer hover:bg-purple-400 whitespace-nowrap w-full md:justify-center" id="aboutBtn">
+                        <i class="fa fa-users"></i>
+                        <span>About Xtra</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="logout" class="nav-btn text-white flex items-center space-x-3 px-10 py-3.5 rounded border-none cursor-pointer hover:bg-purple-400 whitespace-nowrap w-full md:justify-center ">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+    
+    
+    <main id="content" class="lg:h-screen  overflow-x-auto  flex-grow xss w-10/12 md:w-full 2xs:w-full">   
+          <section>
+            <div class="input-container flex items-center justify-center border border-purple-500 rounded-lg p-2 mt-5 bg-white mx-auto w-fit">
+                <i class="fas fa-search text-purple-500 mr-2"></i>
+                <input type="text" placeholder="Search..." id="searchInput"  class="focus:outline-none bg-transparent placeholder-purple-400 text-purple-800">
+            </div>
+            
+
+            <div id="Get-blogs" class="Getblogs">
+
+            </div>
+
+             
+            <div id="pagination" class="flex justify-center  p-5 ">
+                <button id="prevPage" onclick="prevPage()" class="px-4 py-2 mx-2 bg-purple-600 text-white rounded hover:bg-purple-700">Previous</button>
+                <button id="nextPage" onclick="nextPage()" class="px-4 py-2 mx-2 bg-purple-600 text-white rounded hover:bg-purple-700">Next</button>
+            </div>
+            
+          </section>
+        </main>
+
+    </div>
+    <script src="../js-code/script.js"></script>
+    <script src="../js-code/home.js"></script>
+    
+
+</body>
+
+</html>

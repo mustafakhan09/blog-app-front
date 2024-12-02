@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.team-member {
+    @apply w-1/4 flex flex-col text-center;
+  }
+
+
+
+
+.nav-i{
+  @apply mr-44 text-xs;
+}
+
+.my-height .ql-editor {
+  @apply min-h-[72vh]  max-h-[71vh] overflow-y-auto overflow-x-hidden;
+}
+
+
+#editor .ql-editor {
+  @apply min-h-[72vh]  max-h-[71vh] overflow-y-auto overflow-x-hidden;
+}
+
+textarea#comment-input {
+  width: 67vw;
+  resize: none; /* Disable manual resizing */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+
+.comment {
+  display: flex;
+  margin: 7px auto;
+  padding: 20px;
+  justify-content: space-between;
+  background: aliceblue;
+  
+}
+
+.comment-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.comment-btn button {
+  background:rgb(168 85 247 / var(--tw-bg-opacity)) ;
+  color: white;
+  padding: 9px;
+  border-radius: 3px;
+  margin: 2px;
+}
+
+/* .blog-img{
+  width: 230px;
+  
+  object-fit: cover;
+} */

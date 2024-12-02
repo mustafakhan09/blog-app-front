@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="style.css">   
+     <link rel="icon" href="image/Muatafa_Khan_Daily_Dose_of_Curiosity_make_a_logo_of_this_text_61c0f3dd-127b-425e-8dc3-dfaa4e28908b.png " type="image/x-icon">
+    
+</head>
+<body>
+
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User Name" required>
+                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <div id="error-message" style="color: red; display: none; font-size: 10px;"></div>
+                <input type="checkbox" class="chech-box"><span id="span"> Remember Password</span>
+                <button type="submit" class="submit-btn">Log In</button>
+            </form>
+            <form id="Register" class="input-group">
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="text" class="input-field" placeholder="User Name" required>
+                <input type="password" class="input-field" placeholder="Password" required>
+                <div id="Register" style="color: green; display: none ; font-size: 20px;">Register succusful</div>
+                <input type="checkbox" class="chech-box"><span id="span"> Remember Password</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="../js-code/login.js"></script>
+</body>
+</html>

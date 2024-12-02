@@ -1,0 +1,221 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.hero{
+    height: 100vh;
+    width: 100vw;
+    background:     rgba(168, 85, 247, 1);
+    position: absolute;
+}
+
+
+
+.form-box{
+    width: 347px;
+    height: 430px;
+    position: relative;
+    margin: 11% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    
+}
+
+
+
+.button-box{ 
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 2px rgba(168, 85, 247, 1);
+    border-radius: 30px;
+}
+
+
+.toggle-btn{
+    padding: 10px 30px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    position: relative;    
+}
+
+
+
+
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgba(168, 85, 247, 1), /* First color */
+        rgb(129, 39, 239)  /* Slightly altered second color */
+    );   
+    border-radius: 30px;
+    transition: .5s;
+}
+
+
+.input-group{
+    top: 4=150px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(
+        to right,
+        rgba(168, 85, 247, 1), /* First color */
+        rgb(129, 39, 239)  /* Slightly altered second color */
+    );    
+    border: 0;
+    outline: none;
+    border-radius: 30px ;
+    color: white;
+
+}
+
+.chech-box{
+    margin: 30px 10px 30px 0;
+
+}
+
+
+#span{
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+
+#login{
+    left: 50px;
+}
+
+
+
+#Register{
+    left: 420px;
+}
+
+/* login--css */
+
+
+/* Sidebar component styles */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+    .container{
+        display: flex;
+    }
+
+
+.sidebar {
+    background-color: #00CED1;
+    color: white;
+    width: 16.7vw;
+    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.brand {
+    margin-top: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links a:hover {
+    background-color:#07bfbf;
+}
+
+.nav-links a i {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+#content {
+    height: 100svh;
+    max-height: 100vh;
+    overflow-y: auto;
+    flex-grow: 1;
+    width: 83vw;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn {
+    /* background-color: lightgray; */
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Active button styling */
+
+

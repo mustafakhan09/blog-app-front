@@ -1,4 +1,3 @@
-// Toggle between login and register forms
 var x = document.getElementById("login");
 var y = document.getElementById("Register");
 var z = document.getElementById("btn");
@@ -17,10 +16,8 @@ function login() {
 
 
 
-// Fetch API to handle registration
 document.querySelector("#Register").addEventListener("submit", async function (e) {
     e.preventDefault();
-    // Get the input values
     const username = document.querySelector("#Register input[type='text']").value;
     const password = document.querySelector("#Register input[type='password']").value;
     const email = document.querySelector("#Register input[type='Email']").value;
@@ -42,8 +39,6 @@ document.querySelector("#Register").addEventListener("submit", async function (e
                 email: email
             })
         });
-
-        // Process response
         const data = await response.json();
         if (response.ok) {
             console.log(data); // Handle the response data
@@ -51,7 +46,7 @@ document.querySelector("#Register").addEventListener("submit", async function (e
             RegisterMessage.style.display = "block";   
              
         } else {
-            console.error(data); // Handle error
+            console.error(data);
         }
     } catch (error) {
         console.error("Error:", error);
@@ -62,7 +57,6 @@ document.querySelector("#Register").addEventListener("submit", async function (e
 document.querySelector("#login").addEventListener("submit", async function (e) {
     e.preventDefault();
    
-    // Get the input values
     const username = document.querySelector("#login input[type='text']").value;
     const password = document.querySelector("#login input[type='password']").value;
     const errorMessage = document.querySelector("#error-message"); 
@@ -83,7 +77,6 @@ document.querySelector("#login").addEventListener("submit", async function (e) {
             })
         });
 
-        // Process response
         const data = await response.json();
 
         if (response.ok) {
@@ -111,12 +104,10 @@ document.querySelector("#login").addEventListener("submit", async function (e) {
 
 
 window.onload = function() {
-    // Check if a token exists in localStorage
     const token = sessionStorage.getItem('Token');
     
-    // If the token exists, redirect to the main page
     if (token) {
-      window.location.href = 'blog.html';  // Replace 'main.html' with the URL of your main page
+      window.location.href = 'blog.html';  
     }
   };
   

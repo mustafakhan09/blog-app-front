@@ -6,12 +6,10 @@ const modal = document.getElementById("myModal");
   const submitBtn = document.getElementById("submitBtn");
   const spanClose = document.getElementsByClassName("close")[0];
 
-  // When the user clicks the open button, open the modal
   openModalBtn.onclick = function() {
     modal.style.display = "block";
   }
 
-  // When the user clicks on close button or "x", close the modal
   closeModalBtn.onclick = function() {
     modal.style.display = "none";
   }
@@ -20,7 +18,6 @@ const modal = document.getElementById("myModal");
     modal.style.display = "none";
   }
 
-  // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
@@ -55,18 +52,15 @@ const token = localStorage.getItem('authToken');
         return;
     }
 
-    const formData = new FormData(); // This must be initialized before appending any data
+    const formData = new FormData(); 
 
-    // Append data to FormData
-    formData.append('title', heading);          // Append the blog title
-    formData.append('content', description);    // Append the blog content (description)
+    formData.append('title', heading);      
+    formData.append('content', description);   
     
-    // Append the image file if it exists
     if (imageFile) {
-        formData.append('image', imageFile);    // Append the image file
+        formData.append('image', imageFile);   
     }
 
-    // API URL
     const apiUrl = 'http://localhost:3000/api/blog';
 
 
@@ -229,7 +223,7 @@ async function deleteBlog(blogUser, blogId) {
         const result = await dltblog(blogUser, blogId);
         if (result) {
             alert('Blog deleted successfully.');
-            handleBlogs(); // Refresh the blog list after deletion
+            handleBlogs(); 
         } else {
             alert('Failed to delete the blog.');
         }
@@ -256,7 +250,7 @@ async function dltblog(blogUser, blogId) {
             const data = await response.json(); 
             console.log('Blog deleted:', data);
             handleBlogs(); 
-            return data; // Return the response data
+            return data;
         } else {
             console.error('Error deleting blog:', response.status);
             return null;

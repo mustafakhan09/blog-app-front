@@ -1,16 +1,16 @@
 let blogUser = sessionStorage.getItem('blogUser');
-let blogId = sessionStorage.getItem('blogId'); // Represents the logged-in user (blog author)
+let blogId = sessionStorage.getItem('blogId'); 
 let token = localStorage.getItem('authToken');
 
 
 
 if (token) {
     try {
-        // Decode the token to get the payload
+
     const decodedToken = jwt_decode(token);
 
-    // Extract the user ID (it could be stored as `id`, `_id`, or `userId` depending on your token)
-    const userId = decodedToken._id; // or decodedToken.id, decodedToken.userId, etc.
+
+    const userId = decodedToken._id;
     if(userId) {
 
         console.log('User ID:', userId);    
@@ -29,7 +29,7 @@ async function loadBlogContent(blogUser, blogId) {
 
     const decodedToken = jwt_decode(token);
 
-    // Extract the user ID (it could be stored as `id`, `_id`, or `userId` depending on your token)
+  
     const userId = decodedToken._id; 
 
     if (!token) {
@@ -53,23 +53,23 @@ async function loadBlogContent(blogUser, blogId) {
         }
 
         const data = await response.json();
-        const blog = data.blogs[0];  // We fetch a single blog (first one from array)
+        const blog = data.blogs[0];
 
-        // Update the blog content on the page
+
         document.getElementById('blog-title').innerText = blog.title;
-        document.getElementById('blog-content').innerHTML = blog.content;  // The content is already in HTML format
+        document.getElementById('blog-content').innerHTML = blog.content; 
 
         let imageUrl = blog.image;
         if (imageUrl) {
             setBackground(imageUrl);
         }
 
-        // Dynamically add comments to the page
+
         const commentsContainer = document.getElementById('comments-container');
         const commentCount = document.getElementById('comment-headings');
         commentCount.innerText = `Comments (${blog.comments.length})`;
 
-        commentsContainer.innerHTML = ''; // Clear existing comments
+        commentsContainer.innerHTML = '';
 
         blog.comments.forEach(comment => {
             const commentDiv = document.createElement('div');
@@ -86,7 +86,7 @@ async function loadBlogContent(blogUser, blogId) {
             commentBtnContainer.classList.add('2xs:block','2xs:mr-[2vw]', 'lg:flex');
 
 
-            // Check if the logged-in user is the comment owner
+
             if (userId === comment.userid) { 
                 console.log(blogUser);
                 console.log(comment.userid);
@@ -103,12 +103,12 @@ async function loadBlogContent(blogUser, blogId) {
 
                
 
-                // Handle edit button click
+              
                 editBtn.onclick = function() {
                     const commentTextElement = commentDiv.querySelector('.comment-text');
                     const originalComment = commentTextElement.innerText;
                     
-                    // Replace the comment text with a textarea to edit
+                  
                     commentTextElement.innerHTML = `
                         <textarea class="edit-comment-text w-[44vw] h-[30vh] resize-none">${originalComment}</textarea>
                         <button class="save-btn bg-purple-500 text-white p-2 rounded m-1">Save</button>
@@ -119,7 +119,7 @@ async function loadBlogContent(blogUser, blogId) {
                     const cancelBtn = commentDiv.querySelector('.cancel-btn');
                     const editTextarea = commentDiv.querySelector('.edit-comment-text');
 
-                    // Handle saving the edited comment
+              
                     saveBtn.onclick = async function() {
                         const updatedComment = editTextarea.value;
 
@@ -146,7 +146,7 @@ async function loadBlogContent(blogUser, blogId) {
                         }
                     };
 
-                    // Handle cancelling the edit
+                  
                     cancelBtn.onclick = function() {
                         commentTextElement.innerHTML = originalComment; // Revert to the original comment
                     };
@@ -188,15 +188,15 @@ async function loadBlogContent(blogUser, blogId) {
     }
 }
 
-// Call the async function when the DOM is loaded
+
 loadBlogContent(blogUser, blogId);
 
-// Function to navigate back to the index page
+
 function goBack() {
     window.location.href = "index.html";
 }
 
-// Function to set the background image
+
 function setBackground(imageUrl) {
     const targetElement = document.getElementById('backgroundElement');
     targetElement.style.backgroundImage = `url('${imageUrl}')`;

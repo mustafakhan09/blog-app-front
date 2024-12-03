@@ -1,6 +1,6 @@
 
-let currentPage = 1; // This tracks which page the user is currently viewing.
-const blogsPerPage = 5; // This determines how many blogs are fetched per page.
+let currentPage = 1;
+const blogsPerPage = 5; 
 async function getData(page) {
     const token = localStorage.getItem('authToken'); 
     if (!token) {
@@ -35,15 +35,13 @@ getData()
 
 
 async function handleBlogs(page = 1) {
-    const blogs = await getData(page); // Fetch default blogs
+    const blogs = await getData(page);
     const blogContainer = document.getElementById('Get-blogs');
     const searchInput = document.getElementById('searchInput');
 
-    // Function to render the blogs
     function renderBlogs(filteredBlogs) {
         let blogsHTML = '';
 
-        // If there are no blogs to render, show no blogs message
         if (filteredBlogs.length === 0) {
             blogsHTML = '<p class="no-blogs text-[5vw] flex justify-center align-center">No Blogs Found.</p>';
         } else {
@@ -77,28 +75,23 @@ async function handleBlogs(page = 1) {
         }           
 
         blogContainer.innerHTML = blogsHTML;
-        setupPagination(page, blogs.length); // Setup pagination after rendering
+        setupPagination(page, blogs.length);
     }
 
-    // Initially render all blogs
     if (blogs && blogs.length > 0) {
         renderBlogs(blogs);
 
-        // Add event listener for the search input
         searchInput.addEventListener('input', async function () {
             const searchTerm = searchInput.value.toLowerCase();
             const token = localStorage.getItem('authToken');
 
-            // Check if the search term is empty (clear search)
             if (searchTerm === '') {
-                // Fetch original blogs if search input is cleared
-                const allBlogs = await getData(page); // Fetch the original paginated blogs
-                renderBlogs(allBlogs); // Render all blogs
-                setupPagination(page, allBlogs.length); // Setup pagination for all blogs
+                const allBlogs = await getData(page);
+                renderBlogs(allBlogs);
+                setupPagination(page, allBlogs.length);
                 return;
             }
 
-            // If search term is not empty, fetch filtered blogs
             try {
                 const response = await fetch(`http://localhost:3000/api/blog/filterBlog?keyword=${searchTerm}`, {
                     method: 'GET',
@@ -112,7 +105,7 @@ async function handleBlogs(page = 1) {
                     const data = await response.json();
                     const filteredBlogs = data.paginatedBlog;
                     renderBlogs(filteredBlogs);  
-                    setupPagination(page, data.totalPages); // Adjust pagination based on filtered results
+                    setupPagination(page, data.totalPages); 
                 } else {
                     blogContainer.innerHTML = '<p class="no-blogs">No Blogs Found.</p>';
                 }
@@ -126,31 +119,26 @@ async function handleBlogs(page = 1) {
 }
 
 
-    // Function to load the next page
     function nextPage() {
         currentPage += 1;
-        handleBlogs(currentPage); // Load the next page of blogs
+        handleBlogs(currentPage); 
     }
     
-    // Function to load the previous page
     function prevPage() {
         if (currentPage > 1) {
             currentPage -= 1;
-            handleBlogs(currentPage); // Load the previous page of blogs
+            handleBlogs(currentPage);
         }
     }
     
-    // Function to set up pagination buttons (you can expand this based on your needs)
     function setupPagination(page, blogsCount) {
         const prevButton = document.getElementById('prevPage');
         const nextButton = document.getElementById('nextPage');
     
-        // Disable the "Previous" button if on the first page
         prevButton.disabled = page === 1;
-        prevButton.classList.toggle('opacity-50', page === 1); // Apply reduced opacity when disabled
-        prevButton.classList.toggle('cursor-not-allowed', page === 1); // Change cursor style when disabled
+        prevButton.classList.toggle('opacity-50', page === 1); 
+        prevButton.classList.toggle('cursor-not-allowed', page === 1); 
     
-        // Disable the "Next" button if fewer than blogsPerPage blogs are returned or no blogs
         const noMoreBlogs = blogsCount < blogsPerPage || blogsCount === 0;
         nextButton.disabled = noMoreBlogs;
         nextButton.classList.toggle('opacity-50', noMoreBlogs);
